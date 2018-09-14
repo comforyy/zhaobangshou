@@ -1,0 +1,122 @@
+<view class='news-detail-container'>
+  <swiper autoplay="true" interval="3000" class='swiper'>
+    <swiper-item>
+      <block wx:if="{{sharedDetail.classname==0}}">
+        <image src="http://bmob-cdn-9619.b0.upaiyun.com/2018/09/11/2963303a4016151880346b5c8f4c11d2.gif" class='head-img' mode='aspectFill' />
+      </block>
+      <block wx:else>
+        <image src="http://bmob-cdn-9619.b0.upaiyun.com/2018/09/11/0bb8a07b40a50588805daeb1397e3dbc.jpg" class='head-img' mode='aspectFill' />
+      </block>
+    </swiper-item>
+  </swiper>
+
+
+
+
+  <block wx:if="{{sharedDetail.classname==0}}">
+    <view class='problem-sl'>
+      <view class='problem-view'>
+        <text class='problem-tx-sl'>{{sharedDetail.name}}</text>
+        <text class='problem-tx-data'>发布时间：{{sharedDetail.createdAt}}</text>
+      </view>
+    </view>
+    <view class='problem-describe'>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>管理处备注</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.manage}}</text>
+      </view>
+
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>车位地址</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.gourmet_address}}</text>
+      </view>
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>详细描述</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.msg}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>手机号码</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.phones}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>截止日期</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.times}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>每小时金额</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.prices}}元/h</text>
+      </view>
+    </view>
+  </block>
+
+
+  <block wx:else>
+    <view class='problem-sl'>
+      <view class='problem-view'>
+        <text class='problem-tx-sl'>共享保姆</text>
+        <text class='problem-tx-data'>发布时间：{{sharedDetail.createdAt}}</text>
+      </view>
+    </view>
+
+    <view class='problem-describe'>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>主要需求</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.demand}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>住家类型</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.home}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>手机号码</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.phones}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>服务时长</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.time}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>需求时段</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.data}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>房屋面积</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.area}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>小孩</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.kids}}</text>
+      </view>
+
+      <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:28rpx;color:#8a8a8a;margin: 20rpx;'>预期工资</text>
+        <text class='weui-form-preview__value' style='font-size:28rpx;margin: 20rpx;'>{{sharedDetail.wage}}</text>
+      </view>
+
+    </view>
+  </block>
+</view>
+<block wx:if="{{sharedDetail.STATE_CARSTOP==1}}">
+</block>
+<block wx:else>
+<form bindsubmit="suboder" report-submit='true'>
+  <view class='btn'>
+    <view class='btn-state'>
+      <button class="weui-btn-phone" type="primary" bindtap='callphone' data-phoneid='{{sharedDetail.phones}}'>电话联系</button>
+      <button class="weui-btn-submit" formType="submit" type="primary">立即预约</button>
+    </view>
+  </view>
+</form>
+</block>

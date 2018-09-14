@@ -1,0 +1,24 @@
+page {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300rpx;
+  background-image: url("http://bmob-cdn-17927.b0.upaiyun.com/2018/06/27/178b1c224008d8fa801ab01d4b079b3b.png");
+  background-size: cover;
+}
+.msg-name{
+  position: relative;
+  
+  line-height: 1.41176471;
+  font-size: 17px;
+}
+.name{
+  font-size: 30rpx;
+  
+}

@@ -1,0 +1,57 @@
+<view class='autonym'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">姓氏</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入姓氏" bindinput='familyName' />
+      </view>
+    </view>
+  </view>
+</view>
+<view class='solid'></view>
+<view class='idcar'>
+  <view class='idcar-view'>上传身份证明</view>
+  <view class='idcar-up-view'>
+    <view class='front-idcar'>
+      <view wx:if="{{front==null}}">
+        <view class='front-idcar-view'>
+          <image src='../../image/idcaradd.png' class='idcar-img' bindtap='front' data-front='1'></image>
+          <text class='idcar-text'>身份证正面</text>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='front-idcar-view'>
+          <image src='{{front}}' class='idcar-img-url' bindtap='front'></image>
+        </view>
+      </view>
+
+    </view>
+    <view class='contrary-idcar'>
+      <view wx:if="{{contrary==null}}">
+        <view class='front-idcar-view'>
+          <image src='../../image/idcaradd.png' class='idcar-img' bindtap='contrary' data-contrary='0'></image>
+          <text class='idcar-text'>身份证反面</text>
+        </view>
+      </view>
+
+      <view wx:else>
+        <image src='{{contrary}}' class='idcar-img-url' bindtap='contrary'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="conts">
+  <textarea class="areas" placeholder='请描述您擅长的专业' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs">
+    <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    <text class="hint">{{texts}}</text>
+  </textarea>
+</view>
+<form bindsubmit="idcar" report-submit='true'>
+  <button formType="submit" style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 100rpx; border-radius: 40rpx;background: #5bb9e9">提交</button>
+</form>

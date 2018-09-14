@@ -1,0 +1,164 @@
+page {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.btnstyle {
+  display: flex;
+  height: 60rpx;
+  margin: 20rpx 20rpx 0rpx 20rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  background-color: #00B26A;
+*/
+
+.btnstate {
+  display: flex;
+  width: 300rpx;
+  height: 60rpx;
+  border: 1rpx solid #8a8a8a;
+  border-radius: 20rpx;
+  flex-direction: row;
+}
+
+.btnstate-one {
+  display: flex;
+  width: 150rpx;
+  border-radius: 20rpx 0rpx 0rpx 20rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnstate-one-txt {
+  font-size: 30rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnstate-two {
+  display: flex;
+  border-radius: 0rpx 20rpx 20rpx 0rpx;
+  width: 150rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnstate-two-txt {
+  font-size: 30rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.failure {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  justify-content: center;
+  margin: 20rpx;
+  border-radius: 20rpx;
+}
+
+.failure-view-state {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.state-oder-txt {
+  font-size: 28rpx;
+  margin: 20rpx;
+  color: #636363;
+}
+
+.state-txt {
+  font-size: 28rpx;
+  margin: 20rpx;
+  color: red;
+}
+
+.failure-view-detail {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.detail-option {
+  font-size: 37rpx;
+  margin: 20rpx 0rpx 10rpx 20rpx;
+}
+
+.detail-view-datatime {
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.detail-tx {
+  font-size: 20rpx;
+  color: #636363;
+}
+
+.detail-datatime {
+  font-size: 20rpx;
+  margin-left: 20rpx;
+  color: #636363;
+}
+
+.detail-view-oderId {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+}
+
+.oderIdtxt {
+  font-size: 28rpx;
+  color: #636363;
+}
+
+.oderId {
+  font-size: 28rpx;
+  color: #636363;
+  margin-left: 40rpx;
+}
+
+.detail-view-phone {
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.phone-txt {
+  font-size: 28rpx;
+  color: #636363;
+}
+
+.phone-num {
+  font-size: 28rpx;
+  margin-left: 40rpx;
+}
+
+.detail-view-address {
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 0rpx 20rpx 20rpx;
+}
+
+.address-txt {
+  font-size: 28rpx;
+  color: #636363;
+}
+
+.address {
+  font-size: 28rpx;
+  margin-left: 40rpx;
+}
+
+.inprice {
+  display: flex;
+  flex-direction: row;
+  margin: 0rpx 0rpx 20rpx 20rpx;
+  color: red;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "已完成",
+  "usingComponents": {
+    "i-steps": "../../../dist/steps/index",
+    "i-step": "../../../dist/step/index"
+  }
+}

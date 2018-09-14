@@ -1,0 +1,47 @@
+page{
+  background-color: #f1f1f1;
+}
+.enmsg-msg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: url("http://bmob-cdn-17927.b0.upaiyun.com/2018/06/25/d3a08c3540628a0e80747465b2cdf864.jpg")
+}
+.enmsg-msg-img{
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 50%;
+  margin: 20rpx;
+}
+.enmsg-mgs-tx{
+  font-size: 30rpx;
+}
+.enmsg-detail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10rpx;
+}
+.enmsg-detail-line{
+  color: black;
+  font-size: 20rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+.enmsg-detail-tongyong{
+  color: black;
+  font-size: 20rpx;
+}
+.weui-gai-gai{
+  position: relative;
+  padding: 10px 15px;
+  text-align: right;
+  line-height: 1em;
+}
+.address{
+  margin-top: 5rpx;
+  background-color: #fff;
+}

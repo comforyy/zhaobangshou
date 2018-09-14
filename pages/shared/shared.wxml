@@ -1,0 +1,42 @@
+<view class='btnstyle'>
+  <view class='btnstate'>
+    <view class='btnstate-one' bindtap='one' style='background-color:{{oneclickcolor}}'>
+    <text class='btnstate-one-txt'>共享服务</text>
+    </view>
+    <view class='btnstate-two' style='background-color:{{twoclickcolor}}'>
+    <text class='btnstate-two-txt' bindtap='two'>接单服务</text>
+    </view>
+  </view>
+</view>
+<block wx:for="{{sharedData}}" wx:for-item="item" wx:key="key">
+  <view class='failure' bindtap='shared_click' data-sharedid='{{item.objectId}}'>
+    <view class='failure-view-state'>
+      <text class='state-oder-txt'>共享状态:</text>
+      <block wx:if="{{item.STATE_CARSTOP==0}}">
+      <text class='state-txt'>进行中</text>
+      </block>
+      <block wx:else>
+       <text class='state-txt'>已接单</text>
+      </block>
+    </view>
+    <view class='failure-view-detail'>
+    <block wx:if="{{item.classname==0}}">
+    <text class='detail-option'>车位共享</text>
+    </block>
+      <block wx:else="{{item.classname==1}}">
+      <text class='detail-option'>共享保姆</text>
+      </block>
+      
+      <view class='detail-view-datatime'>
+        <text class='detail-tx'>发布时间:</text>
+        <text class='detail-datatime'>{{item.createdAt}}</text>
+      </view>
+      <view class='detail-view-phone'>
+        <text class='phone-txt'>联系电话:</text>
+        <text class='phone-num'>{{item.phones}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+

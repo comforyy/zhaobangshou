@@ -1,0 +1,31 @@
+<view class="page">
+  <block wx:for="{{identification}}" wx:for-item="item" wx:key="key">
+    <view class="weui-msg">
+      <view class="weui-msg__icon-area">
+        <icon type="success" size="93"></icon>
+      </view>
+      <view class="weui-msg__text-area">
+        <view wx:if="{{item.state==1}}">
+          <view class="weui-msg__title">恭喜您！审核通过了</view>
+        </view>
+        <view wx:else>
+          <view class="weui-msg__title">信息提交成功</view>
+          <view class="weui-msg__desc">请稍后等待工作人员核实真实身份，感谢您对找帮手的支持</view>
+        </view>
+      </view>
+      <view class="weui-msg__opr-area">
+        <view class="weui-btn-area">
+
+        </view>
+      </view>
+      <view class="weui-msg__extra-area">
+        <view class="weui-footer">
+          <view class="weui-footer__links">
+            <navigator url="" class="weui-footer__link">找帮手</navigator>
+          </view>
+          <view class="weui-footer__text">Copyright © 2001-2018 szjiuding.com</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

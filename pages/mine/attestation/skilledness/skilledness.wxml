@@ -1,0 +1,11 @@
+<view class="sel-box">
+  <view wx:for="{{repContent}}" class="multi-selection">
+  <view class='skilledness'>
+  <text>{{item.message}}</text>
+    <image src="{{selectIndex[index].sureid? hasSelect : noSelect}}" class="multi-img" data-selectIndex="{{index}}" bindtap="selectRep" />
+  </view>
+    
+    <view class='line'/>
+  </view>
+  
+</view>

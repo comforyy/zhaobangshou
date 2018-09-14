@@ -1,0 +1,18 @@
+<view class='img-logo'>
+    <image src='{{aa.img}}' style='height:128rpx;width:128rpx;'/>
+    <text class='font-s'>{{aa.dataMsg}}</text>
+    <text class='font-s'>公司涉及行业：{{aa.prodect}}</text>
+    <view class='phone'>
+      <view class='phone-msg' bindtap='callPhone' data-phone='{{aa.phone}}'>
+        <image src='http://bmob-cdn-17927.b0.upaiyun.com/2018/05/30/fafb4ee44062629980eff0275351269a.jpg' style='height:60rpx;width:60rpx;'></image>
+        <text class='phone-tx' >{{aa.phone}}</text>
+      </view>
+    </view>
+   <view class="weui-footer">
+            <view class="weui-footer__links">
+                <navigator url="" class="weui-footer__link">找帮手</navigator>
+                <navigator url="" class="weui-footer__link">深圳市找帮手网络科技有限公司</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2001-2018 szjiuding.com</view>
+        </view>
+</view>

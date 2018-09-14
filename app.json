@@ -1,0 +1,99 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wait/wait",
+    "pages/shared/shared",
+    "pages/nanny/nanny",
+    "pages/shared/shareddetail/shareddetail",
+    "pages/shared/shareddetail/carplate",
+    "pages/wait/wait-detail/wait-detail",
+    "pages/wait/wait-detail/msg_success",
+    "pages/wait/stay-wait/stay-wait",
+    "pages/wait/hfeedback/hfeedback",
+    "pages/wait/hfeedback/msg_success",
+    "pages/wait/enmsg/enmsg",
+    "pages/wait/server/server",
+    "pages/wait/server-detail/server-detail",
+    "pages/wait/server-finish/server-finish",
+    "pages/wait/unfinished/unfinished",
+    "pages/mine/mine",
+    "pages/mine/tbphone/tbphone",
+    "pages/mine/modinfo/modinfo",
+    "pages/mine/understand/understand",
+    "pages/logs/logs",
+    "pages/weixiu/weixiu",
+    "pages/weixiu/weixiutwo/weixiutwo",
+    "pages/anzhuang/anzhuang",
+    "pages/anzhuang/anzhuangtwo/anzhuangtwo",
+    "pages/qingjie/qingjie",
+    "pages/qingjie/qingjietwo/qingjietwo",
+    "pages/banyun/banyun",
+    "pages/banyun/banyuntwo/banyuntwo",
+    "pages/zhuangxiu/zhuangxiu",
+    "pages/zhuangxiu/zhuangxiutwo/zhuangxiutwo",
+    "pages/huansuo/huansuo",
+    "pages/huansuo/huansuotwo/huansuotwo",
+    "pages/zhineng/zhineng",
+    "pages/zhineng/zhinengtwo/zhinengtwo",
+    "pages/more/more",
+    "pages/more/moretwo/moretwo",
+    "pages/add/add",
+    "pages/add/oder-release/oder-release",
+    "pages/success/success",
+    "pages/Atext/Atext",
+    "pages/modi/modi",
+    "pages/parking/parking",
+    "pages/mine/attestation/attestation",
+    "pages/mine/attestation/skilledness/skilledness",
+    "pages/mine/attestation/msg_success",
+    "pages/mine/attestation/msg_fail",
+    "pages/mine/money/money",
+    "pages/mine/money/moneydetail/moneydetail",
+    "pages/mine/money/income/income",
+    "pages/address/address"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "onReachBottomDistance": 50,
+    "navigationBarBackgroundColor": "#5BB9E9",
+    "navigationBarTitleText": "找帮手",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#5BB9E9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "找帮手",
+        "selectedIconPath": "pages/image/fragment/home1.png",
+        "iconPath": "pages/image/fragment/home.png"
+      },
+      {
+        "pagePath": "pages/wait/wait",
+        "text": "待帮忙",
+        "selectedIconPath": "pages/image/fragment/oder1.png",
+        "iconPath": "pages/image/fragment/oder.png"
+      },
+      {
+        "pagePath": "pages/shared/shared",
+        "text": "共享",
+        "selectedIconPath": "pages/image/fragment/Shared1.png",
+        "iconPath": "pages/image/fragment/Shared.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "selectedIconPath": "pages/image/fragment/mine1.png",
+        "iconPath": "pages/image/fragment/mine.png"
+      }
+    ]
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.6",
+      "provider": "wx5bc2ac602a747594"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.parking{
+  height: 350rpx;
+  width: 100%;
+}

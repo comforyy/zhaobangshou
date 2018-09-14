@@ -1,0 +1,85 @@
+<wxs module="filters" src="../../../utils/toFix.wxs"></wxs>
+<view class='bg'>
+  <view class="unfinish-oder-msg">
+    <text class='unfinish-oder-txt'>订单信息</text>
+    <view class='unfinish-oder-state'>
+      <text class='unfinish-oder-state-txt'>订单编号:</text>
+      <text class='unfinish-oder-state'>{{unfinish.objectId}}</text>
+    </view>
+    <view class='unfinish-oder-state'>
+      <text class='unfinish-oder-state-txt'>订单状态:</text>
+      <text class='unfinish-oder-state'>未完成</text>
+    </view>
+    <view class='unfinish-oder-state'>
+      <text class='unfinish-oder-state-txt'>订单金额:</text>
+      <text class='unfinish-oder-state'>{{unfinish.price}}元</text>
+    </view>
+    <view class='unfinish-oder-state'>
+      <text class='unfinish-oder-state-txt'>雇佣师傅:</text>
+      <text class='unfinish-oder-state'>{{unfinish.enuserid.identification.familyName}}</text>
+    </view>
+    <view class='unfinish-oder-state'>
+      <text class='unfinish-oder-state-txt'>订单时间:</text>
+      <text class='unfinish-oder-state'>{{unfinish.data}}</text>
+    </view>
+  </view>
+
+  <view class='en-msg'>
+    <image src='{{unfinish.enuserid.avatarUrl}}' class='en-icon' />
+    <view class='en-msg-detail'>
+      <text class='en-name'>{{unfinish.enuserid.identification.id_name}}</text>
+      <view class='en-detail-txt'>
+        <text>服务次数：</text>
+        <text>{{unfinish.enuserid.identification.industry}}</text>
+        <text class='lin'>|</text>
+        <text>好评率：</text>
+        <text>{{filters.toFix(unfinish.enuserid.identification.appraise/(unfinish.enuserid.identification.industry*5)*100)}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='unfinish-oder-detail'>
+    <text class='oder-detail'>需求详情</text>
+    <view class='unfinish-oder-detail-tx'>
+      <text class='detail'>详细描述：</text>
+      <text class='option'>{{unfinish.Special}}</text>
+    </view>
+    <view class='unfinish-oder-detail-option'>
+      <text class='detail'>维修问题：</text>
+      <text class='option'>{{unfinish.MSselect}}</text>
+    </view>
+    <view class='unfinish-oder-detail-option'>
+      <text class='detail'>问题图片：</text>
+      <block wx:for="{{unfinish.picurls}}" wx:key="*this">
+        <image class='questioni-img' src='{{item}}'></image>
+      </block>
+    </view>
+  </view>
+  <view wx:if="{{enUser>0}}">
+  <view wx:if="{{unfinish.pay==1}}"></view>
+  <view wx:else>
+    <view class='money'>
+      <view class='detail-money'>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label" style='font-size:28rpx;color:#8a8a8a;'>退款金额</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入金额" style='font-size:28rpx;color:red;' type="number" bindinput="price" maxlength='4' />
+          </view>
+          <form bindsubmit='submit' report-submit='true'>
+            <view class="weui-cell__ft">
+              <view class="weui-vcode-btn" style='font-size:28rpx;color:#5bb9e9;'>
+                <form bindsubmit="submit" report-submit='true'>
+                  <button form-type='submit' class="weui-btn mini-btn" type="warn" size="mini">提交</button>
+                </form>
+              </view>
+            </view>
+          </form>
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+<view wx:else></view>
+</view>

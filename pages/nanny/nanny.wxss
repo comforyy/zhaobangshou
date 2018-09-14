@@ -1,0 +1,4 @@
+.nanny{
+  height: 350rpx;
+  width: 100%;
+}

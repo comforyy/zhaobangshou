@@ -1,0 +1,91 @@
+<view>
+  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536560054245&di=9456de0c61707b689aa611a2a43360a2&imgtype=0&src=http%3A%2F%2Fimgs.focus.cn%2Fupload%2Fpics%2F38199%2Fb_381982588.jpg' class='parking'></image>
+
+  <view class="weui-cells__title">请填写信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">位置</view>
+      </view>
+      <view class="weui-cell__bd" bindtap='btnlocal'>
+        <input class="weui-input" placeholder="请输入你的车位位置" value='{{localaddress}}' disabled='true' />
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">管理处</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="注明物业或停车场信息等等" bindinput='management' />
+      </view>
+      <view class="weui-cell__ft">
+
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系电话</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入电话" type="digit" bindinput="phone" maxlength='11' />
+      </view>
+      <view class="weui-cell__ft">
+
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{date}}" start="2018-09-01" end="2050-09-01" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">出租金额/h</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入价格" type="digit" bindinput="price" maxlength='4' />
+      </view>
+      <view class="weui-cell__ft">
+
+      </view>
+    </view>
+    <!--
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="data" value="{{date}}" start="2018-09-01" end="2050-09-01" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+      </view>
+    </view>
+-->
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="选填" bindinput='selectmsg' />
+      </view>
+      <view class="weui-cell__ft">
+
+      </view>
+    </view>
+
+  </view>
+
+  <form bindsubmit="release" report-submit='true'>
+    <button formType="submit" style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx; border-radius: 40rpx;background: #5bb9e9" data-userOder='{{oderid}}'>发布</button>
+  </form>
+</view>

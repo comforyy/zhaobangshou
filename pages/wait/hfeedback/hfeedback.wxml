@@ -1,0 +1,87 @@
+
+<view>
+  <view class='bg'>
+    <view class='server-steps'>
+      <i-steps class='steps'>
+        <i-step status="finish" icon="barrage">
+          <view slot="title">
+            雇佣
+          </view>
+
+        </i-step>
+        <i-step status="finish" icon="brush">
+          <view slot="title">
+            服务中
+          </view>
+        </i-step>
+
+        <i-step status="process" icon="accessory">
+          <view slot="title">
+            反馈
+          </view>
+        </i-step>
+
+        <i-step icon="right">
+          <view slot="title">
+            已完成
+          </view>
+        </i-step>
+      </i-steps>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title" style='font-size:28rpx;'>图片上传</view>
+              <!-- <view class="weui-uploader__info">{{files.length}}/2</view> -->
+
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for="{{files}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="feedback">
+    <textarea name="evaContent" maxlength="500" placeholder="反馈问题/评价本次服务" bindinput="feedbackPro" style='font-size:28rpx;' />
+    <view class="comment1-description" style="display:flex;flex-direction:row;" data-flag='{{flag2}}'>
+      <view class="comment1-description1">评价</view>
+      <view class="star-pos" style="display:flex;flex-direction:row;">
+        <view class="starsM  {{flag2>=1? '': 'hideStar'}}" bindtap="changeColor11"></view>
+        <view class="starsM  {{flag2>=2? '': 'hideStar'}}" bindtap="changeColor12"></view>
+        <view class="starsM  {{flag2>=3? '': 'hideStar'}}" bindtap="changeColor13"></view>
+        <view class="starsM  {{flag2>=4? '': 'hideStar'}}" bindtap="changeColor14"></view>
+        <view class="starsM  {{flag2>=5? '': 'hideStar'}}" bindtap="changeColor15"></view>
+      </view>
+    </view>
+
+    <view class="radio-group">
+      <label class='radio-label' style='font-size:28rpx;'>是否完成：</label>
+      <radio-group bindchange="radioChange" class='radio'>
+        <label wx:for="{{items}}" wx:key="key" style='font-size:28rpx;'>
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  <block wx:if="{{no==1}}">
+  <button class="weui-btn" type="warn" bindtap='submitFeedback'>退款</button>
+  </block>
+  <block wx:if="{{no==0}}">
+ <button bindtap="submitFeedback" class="weui-btn" type="primary">提交</button>
+  </block>
+  </view>
+</view>

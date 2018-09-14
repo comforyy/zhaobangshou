@@ -1,0 +1,52 @@
+page,
+.page,
+.page__bd{
+    height: 100%;
+    background-color: #f1f1f1;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 10rpx;
+    text-align: center;
+}
+.money-income{
+  display: flex;
+  flex-direction: column;
+}
+.money-income-list{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 7rpx;
+}
+.money-income-list-select{
+ font-size: 25rpx;
+  margin: 20rpx;
+  }
+  .money-income-list-addresss{
+    font-size: 25rpx;
+    margin: 20rpx;
+  }
+  .money-income-list-price{
+    font-size: 25rpx;
+    margin: 20rpx;
+    color: red;
+  }
+    .money-withdrawal-list-price{
+    font-size: 25rpx;
+    margin: 20rpx;
+    color: #24A838;
+  }
+ .money-withdrawal-list-addresss{
+    font-size: 25rpx;
+    margin: 20rpx;
+    color: red;
+  }
+   .money-withdrawal-b-list-addresss{
+    font-size: 25rpx;
+    margin: 20rpx;
+    color: #24A838;
+  }

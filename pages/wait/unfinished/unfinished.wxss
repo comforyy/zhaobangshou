@@ -1,0 +1,132 @@
+.bg {
+  background-color: #f1f1f1;
+}
+
+.unfinish-steps {
+  background-color: #fff;
+}
+
+.steps {
+  margin: 1rpx;
+}
+
+.unfinish-oder-msg {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.unfinish-oder-txt {
+  font-size: 35rpx;
+  margin: 20rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.unfinish-oder-state {
+  display: flex;
+  flex-direction: row;
+}
+
+.unfinish-oder-state-txt {
+  font-size: 28rpx;
+  color: #636363;
+  margin: 10rpx;
+}
+
+.unfinish-oder-state {
+  font-size: 28rpx;
+  margin: 10rpx;
+}
+
+.en-msg {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.en-icon {
+  height: 80rpx;
+  width: 80rpx;
+  margin: 40rpx 10rpx 20rpx 10rpx;
+  border-radius: 50%;
+}
+
+.en-msg-detail {
+  display: flex;
+  flex-direction: column;
+  margin: 40rpx 10rpx 20rpx 10rpx;
+  font-size: 28rpx;
+}
+
+.en-detail-txt {
+  display: flex;
+  flex-direction: row;
+}
+
+.en-detail-txt {
+  color: #5bb9e9;
+}
+
+.lin {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.unfinish-oder-detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.oder-detail {
+  margin: 20rpx;
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.unfinish-oder-detail-tx {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+}
+
+.unfinish-oder-detail-option {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20rpx;
+}
+
+.detail {
+  font-size: 28rpx;
+  color: #636363;
+  margin: 10rpx 10rpx 0rpx 10rpx;
+}
+
+.option {
+  margin: 10rpx;
+  font-size: 28rpx;
+}
+.questioni-img{
+  margin: 10rpx 10rpx 0rpx 10rpx;
+  height: 120rpx;
+  width: 120rpx;
+}
+.money{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+.detail-money{
+  display: flex;
+  flex-direction: row;
+}
+.detail-money-btn{
+  display: block;
+  border-left: 1px solid #e5e5e5;
+  padding-top: 20rpx;
+}

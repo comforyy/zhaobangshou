@@ -1,0 +1,95 @@
+.autonym {
+  
+}
+
+.idcar {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.idcar-view {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+.solid{
+  border-top: 10rpx solid #f1f1f1;
+}
+.idcar-up-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.front-idcar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350rpx;
+  width: 350rpx;
+  margin: 20rpx;
+  background-color: #f1f1f1;
+}
+.front-idcar-view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contrary-idcar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350rpx;
+  width: 350rpx;
+  margin: 20rpx;
+  background-color: #f1f1f1;
+}
+.idcar-img{
+  height: 64rpx;
+  width: 64rpx;
+}
+.idcar-img-url{
+  height: 200rpx;
+  width: 300rpx;
+}
+.idcar-text{
+  margin-top: 10rpx;
+  color: #AFB0B2;
+  font-size: 25rpx;
+}
+/**
+textarea
+*/
+
+.conts{  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx;  
+}  
+.areas{  
+  height:120rpx;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 30rpx;   
+  border: 1rpx solid gainsboro;  
+  overflow: hidden;     
+  position: relative;
+  background-color: #f1f1f1;   
+}  
+.currentWordNumber{  
+  font-size: 28rpx;  
+  color: gray;  
+  position: absolute;  
+  left: 570rpx;  
+  top: -6rpx;  
+}  
+.hint{  
+   font-size: 28rpx;  
+   position: absolute;  
+   top: 100rpx;  
+   left: 30rpx;  
+   color: #5bb9e9;  
+} 

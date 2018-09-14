@@ -1,0 +1,6 @@
+page{
+    background-color: #FFFFFF;
+}
+.bg{
+  margin: 20rpx;
+}

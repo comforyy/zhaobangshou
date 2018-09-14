@@ -1,0 +1,313 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+
+
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px); background-color: #5bb9e9;"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <!--待雇佣-->
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view>
+            <block wx:for="{{AllOderList}}" wx:for-item="item" wx:key="key">
+              <view class='articlelist' bindtap='goOderDetail' data-goObject='{{item.objectId}}'>
+                <view class='author-time'>
+                  <image class='author-icon' src="{{item.avatarUrl}}"></image>
+                  <text class='author-name'>{{item.name}}</text>
+                  <text class='author-data'>{{item.createdAt}}</text>
+                  <text class='author-data'>{{item.city}}</text>
+                </view>
+
+                <text class='title'>{{item.options}}</text>
+                <image class='article-img' src="{{item.pic_url[0]}}" mode='aspectFill'></image>
+              </view>
+            </block>
+          </view>
+          <view wx:if="{{orderList==0}}">
+            <view class='oder'>
+              <image src='../image/oder.png' class='oder-img'></image>
+              <text class='oder-text'>暂无需求</text>
+            </view>
+          </view>
+          <view>
+            <block wx:for="{{orderList}}" wx:for-item="item" wx:key="key">
+              <view class='articlelist'>
+                <view class='author-time'>
+                  <image class='author-icon' src="{{item.avatarUrl}}"></image>
+                  <text class='author-name'>{{item.name}}</text>
+                  <text class='author-data'>{{item.createdAt}}</text>
+                  <block wx:if="{{item.offer>0}}">
+                    <view class="weui-badge" style="margin-left: 5px;">{{item.offer}}位师傅报价</view>
+                  </block>
+                  <block wx:else></block>
+                  <image src='http://bmob-cdn-17927.b0.upaiyun.com/2018/06/06/b7b1c9e340e3d5f0807e17a51cdfe712.jpg' class='del' bindtap='del' data-delid='{{item.objectId}}' style='height:40rpx;width:40rpx;'></image>
+                </view>
+                <text class='title'>{{item.options}}</text>
+                <image class='article-img' src="{{item.pic_url[0]}}" bindtap='goOderDetail' data-goObject='{{item.objectId}}'></image>
+
+
+              </view>
+            </block>
+          </view>
+        </view>
+        <!--服务中-->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <block wx:for="{{bpickupList}}" wx:key="key">
+            <view class='server'>
+              <view class='server-user-msg'>
+                <image src='{{item.userOder.avatarUrl}}' class='server-user-icon' mode='aspectFit' />
+
+                <text class='server-user-name'>{{item.EnuserOder.nickName}}</text>
+                <text class='server-data-time'>{{item.createdAt}} </text>
+                <text class='server-price'>价格:</text>
+                <text class='server-price-l'>{{item.price}}</text>
+
+              </view>
+
+              <view class='server-oder-msg'>
+                <image src='{{item.picurls[0]}}' mode='aspectFill' class='server-oder-msg-img' />
+                <view class='server-oder-msg-txt' bindtap='clickserver' data-id='{{item.objectId}}'>
+                  <text class='server-oder-msg-txt-problem'>{{item.MSselect}}</text>
+                  <text class='server-oder-msg-txt-address'>{{item.address}}</text>
+                </view>
+              </view>
+              <block wx:if="{{item.EnuserOder.hePhonel>0}}">
+                <view class='server-user-hephone'>
+                  <text class='server-user-hephone-txt'>他/她的电话:</text>
+                  <text class='server-user-hephone-l' bindtap='HePhone' data-hePhone='{{item.EnuserOder.hePhonel}}'>{{item.EnuserOder.hePhonel}}</text>
+                </view>
+              </block>
+              <block wx:else></block>
+              <view class='server-user-phone'>
+                <text class='server-user-phone-txt'>电话:</text>
+                <text class='server-user-phone-l' bindtap='Enphone' data-userphone='{{item.userOder.phone}}'>{{item.userOder.phone}}</text>
+                <button class="weui-btn mini-btn" type="warn" size="mini" style=' margin: 10rpx 0rpx 10rpx 200rpx;' bindtap='ufeedback' data-hireid='{{item.objectId}}' data-useroderid='{{item.userOder.objectId}}' data-enuseroderid='{{item.EnuserOder.objectId}}'>反馈</button>
+              </view>
+            </view>
+          </block>
+
+          <!--师傅视图-->
+          <block wx:for="{{EnOder}}" wx:key="key">
+            <view class='server'>
+              <view class='server-user-msg'>
+                <image src='{{item.userOder.avatarUrl}}' class='server-user-icon' mode='aspectFit' />
+
+                <text class='server-user-name'>{{item.EnuserOder.nickName}}</text>
+                <text class='server-data-time'>{{item.createdAt}} </text>
+                <text class='server-price'>价格:</text>
+                <text class='server-price-l'>{{item.price}}</text>
+
+              </view>
+
+              <view class='server-oder-msg'>
+                <image src='{{item.picurls[0]}}' mode='aspectFill' class='server-oder-msg-img' />
+                <view class='server-oder-msg-txt'>
+                  <text class='server-oder-msg-txt-problem'>{{item.MSselect}}</text>
+                  <text class='server-oder-msg-txt-address'>{{item.address}}</text>
+                </view>
+              </view>
+              <block wx:if="{{item.EnuserOder.hePhonel>0}}">
+                <view class='server-user-hephone'>
+                  <text class='server-user-hephone-txt'>他/她的电话:</text>
+                  <text class='server-user-hephone-l' bindtap='HePhone' data-hePhone='{{item.EnuserOder.hePhonel}}'>{{item.EnuserOder.hePhonel}}</text>
+                </view>
+              </block>
+              <block wx:else></block>
+              <view class='server-user-phone'>
+                <text class='server-user-phone-txt'>电话:</text>
+                <text class='server-user-phone-l' bindtap='Enphone' data-userphone='{{item.userOder.phone}}'>{{item.userOder.phone}}</text>
+
+              </view>
+            </view>
+          </block>
+
+
+        </view>
+        <!--已完成-->
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+
+          <view class='view2'>
+
+            <block wx:for="{{usercomplete}}" wx:key="key">
+              <view class="pichup_bg-3">
+                <view class='user_message'>
+                  <image class='user_icon' src='{{item.enuserid.avatarUrl}}'></image>
+                  <text class='user_name'>{{item.enuserid.nickName}}</text>
+                  <text class='create_data'>{{item.createdAt}}	</text>
+                  <text class='price-1'>价格：</text>
+                  <text class='price'>{{item.price}}</text>
+                </view>
+                <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;"></view>
+                <view class='oder_message' bindtap='serverFin' data-finish='{{item.objectId}}'>
+
+
+                  <view class='img-bg' wx:if="{{item.START_ODER ==0}}">
+                    <image src=' http://bmob-cdn-17927.b0.upaiyun.com/2018/05/29/9a2ef458405483f0808f6f002efe7314.jpg' style='height:160rpx;width:160rpx;'></image>
+                  </view>
+                  <view class='img-bg' wx:if="{{item.START_ODER ==1}}">
+                    <image src=' http://bmob-cdn-17927.b0.upaiyun.com/2018/05/30/e510a68f40a3183380014a2379f2b79b.jpg' style='height:160rpx;width:160rpx;'></image>
+                  </view>
+
+                  <image class='oder_icon' src='{{item.feedbackImg[0]}}' mode='aspectFill'></image>
+                  <view class='oder_detail'>
+                    <text class='oder_select'>需求：{{item.MSselect}}</text>
+                    <text class='oder_address'>地址：{{item.address}}</text>
+                  </view>
+                </view>
+                <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+
+
+
+                <view class="comment1-description" style="display:flex;flex-direction:row;" data-flag='{{item.star}}'>
+                  <view class="comment1-description1">评价</view>
+                  <view class="star-pos" style="display:flex;flex-direction:row;">
+                    <view class="starsM  {{item.star>=1? '': 'hideStar'}}" bindtap="changeColor11"></view>
+                    <view class="starsM  {{item.star>=2? '': 'hideStar'}}" bindtap="changeColor12"></view>
+                    <view class="starsM  {{item.star>=3? '': 'hideStar'}}" bindtap="changeColor13"></view>
+                    <view class="starsM  {{item.star>=4? '': 'hideStar'}}" bindtap="changeColor14"></view>
+                    <view class="starsM  {{item.star>=5? '': 'hideStar'}}" bindtap="changeColor15"></view>
+                  </view>
+                </view>
+                <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+                <view>
+                  <view class='En_phone1'>电话：{{item.enuserid.phone}}</view>
+                </view>
+              </view>
+            </block>
+
+
+
+            <block wx:for="{{Encomplete}}" wx:key="key">
+              <view class="pichup_bg-1">
+                <view class='user_message'>
+                  <image class='user_icon' src='{{item.userid.avatarUrl}}'></image>
+                  <text class='user_name'>{{item.userid.nickName}}</text>
+                  <text class='create_data'>{{item.createdAt}}	</text>
+                  <text class='price-1'>价格：</text>
+                  <text class='price'>{{item.price}}</text>
+                </view>
+                <view style="height:·;border:none;border-top:1px dashed #B3B3B3;"></view>
+                <view class='oder_message'>
+
+
+                  <view class='img-bg' wx:if="{{item.START_ODER ==0}}">
+                    <image src=' http://bmob-cdn-17927.b0.upaiyun.com/2018/05/29/9a2ef458405483f0808f6f002efe7314.jpg' style='height:160rpx;width:160rpx;'></image>
+                  </view>
+                  <view class='img-bg' wx:if="{{item.START_ODER ==1}}">
+                    <image src=' http://bmob-cdn-17927.b0.upaiyun.com/2018/05/30/e510a68f40a3183380014a2379f2b79b.jpg' style='height:160rpx;width:160rpx;'></image>
+                  </view>
+
+                  <image class='oder_icon' src='{{item.feedbackImg[0]}}' mode='aspectFill'></image>
+                  <view class='oder_detail'>
+                    <text class='oder_select'>需求：{{item.MSselect}}</text>
+                    <text class='oder_address'>地址：{{item.address}}</text>
+                  </view>
+                </view>
+                <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+
+
+                <view class="comment1-description" style="display:flex;flex-direction:row;" data-flag='{{item.star}}'>
+                  <view class="comment1-description1">评价</view>
+                  <view class="star-pos" style="display:flex;flex-direction:row;">
+                    <view class="starsM  {{item.star>=1? '': 'hideStar'}}" bindtap="changeColor11"></view>
+                    <view class="starsM  {{item.star>=2? '': 'hideStar'}}" bindtap="changeColor12"></view>
+                    <view class="starsM  {{item.star>=3? '': 'hideStar'}}" bindtap="changeColor13"></view>
+                    <view class="starsM  {{item.star>=4? '': 'hideStar'}}" bindtap="changeColor14"></view>
+                    <view class="starsM  {{item.star>=5? '': 'hideStar'}}" bindtap="changeColor15"></view>
+                  </view>
+                </view>
+                <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+                <view>
+                  <view class='En_phone1'>电话：{{item.userphone}}</view>
+                </view>
+                <view wx:if="{{item.hePhonel>0}}">
+                  <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+                  <view class='En_phone1'>他/她的电话：{{item.hePhone}}</view>
+                </view>
+                <view wx:else>
+                  <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;" />
+                  <view class='En_phone1'>他/她的电话：未设</view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!--未完成-->
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <block wx:for="{{invalid}}" wx:key="key">
+            <view class='failure'>
+              <view class='failure-view-state'>
+                <text class='state-oder-txt'>订单状态:</text>
+                <block wx:if="{{item.pay==1}}">
+                <text class='state-txt'>已退款</text>
+                </block>
+                <block wx:else>
+                <text class='state-txt'>正在处理</text>
+                </block>
+              </view>
+              <view class='failure-view-detail' bindtap='unfinish' data-id='{{item.objectId}}'>
+                <text class='detail-option'>{{item.MSselect}}</text>
+                <view class='detail-view-datatime'>
+                  <text class='detail-tx'>发布时间:</text>
+                  <text class='detail-datatime'>{{item.createdAt}}</text>
+                </view>
+                <view class='detail-view-oderId'>
+                  <text class='oderIdtxt'>订单编号:</text>
+                  <text class='oderId'>{{item.objectId}}</text>
+                </view>
+                <view class='detail-view-phone'>
+                  <text class='phone-txt'>联系电话:</text>
+                  <text class='phone-num'>{{item.userphone}}</text>
+                </view>
+                <view class='detail-view-address'>
+                  <text class='address-txt'>上门地址:</text>
+                  <text class='address'>{{item.address}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+        </view>
+        <!--end未完成-->
+        <!-- 已失效 -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 4}}">
+          <block wx:for="{{eninvalid}}" wx:key="key">
+            <view class='failure'>
+              <view class='failure-view-state'>
+                <text class='state-oder-txt'>订单状态:</text>
+                <text class='state-txt'>已失效</text>
+              </view>
+              <view class='failure-view-detail'>
+                <text class='detail-option'>{{item.options}}</text>
+                <view class='detail-view-datatime'>
+                  <text class='detail-tx'>发布时间:</text>
+                  <text class='detail-datatime'>{{item.createdAt}}</text>
+                </view>
+                <view class='detail-view-oderId'>
+                  <text class='oderIdtxt'>订单编号:</text>
+                  <text class='oderId'>{{item.objectId}}</text>
+                </view>
+                <view class='detail-view-phone'>
+                  <text class='phone-txt'>联系电话:</text>
+                  <text class='phone-num'>{{item.userphone}}</text>
+                </view>
+                <view class='detail-view-address'>
+                  <text class='address-txt'>上门地址:</text>
+                  <text class='address'>{{item.address}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- end已失效 -->
+      </view>
+    </view>
+  </view>
+</view>

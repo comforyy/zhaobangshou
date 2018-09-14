@@ -1,0 +1,19 @@
+/* pages/mine/attestation/skilledness/skilledness.wxss */
+.multi-selection{
+  display: flex;
+  flex-direction: column;
+}
+.line{
+  height: 10rpx;
+  width: 100%;
+  background: #f1f1f1;
+}
+.skilledness{
+  margin: 20rpx;
+}
+.multi-img{
+  position: fixed;
+  height: 48rpx;
+  width: 48rpx;
+  left: 90%;
+}

@@ -1,0 +1,40 @@
+<view class='bg_select' style="width:100%;height:50rpx">
+  <text>Tis：如果在线联系不上可以返回主页继续等待哟</text>
+</view>
+<view class='contion'>
+  <view class="container">
+    <view class='progress_box'>
+      <canvas class="progress_bg" canvas-id="canvasProgressbg"> </canvas>
+      <canvas class="progress_canvas" canvas-id="canvasProgress"> </canvas>
+      <view class="progress_text">
+        <view class="progress_dot"></view>
+        <text class='progress_info'> {{progress_txt}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='contaion'>
+  <block wx:for="{{enLineList}}" wx:key="key">
+    <view class="pichup_bg">
+      <view class='EnMessage'>
+        <image class='EnIcon' src='{{item.pickupId.avatarUrl}}'></image>
+        <text class='EnName'>{{item.identification.familyName}}</text>
+        <text class='Enlocal'>{{item.pickupId.city}}</text>
+
+        <view class='again_up'>
+          <view bindtap='pu_oder' data-pickoder='{{item.pickupId.objectId}}' data-price='{{item.price}}' data-own='{{item.bpickupId.objectId}}'>
+            <text>雇佣</text>
+          </view>
+        </view>
+      </view>
+      <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;"></view>
+      <view class='Message'>
+        <text class='EnPhone'>电话：{{item.pickupId.phone}}</text>
+        <text>💰:</text>
+        <text class='price'>{{item.price}}RMB</text>
+      </view>
+    </view>
+  </block>
+</view>
+<button class='btn-3' bindtap="comeback" style="color:#fff;">返回主页面等待</button>

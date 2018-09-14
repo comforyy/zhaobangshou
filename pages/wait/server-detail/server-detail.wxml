@@ -1,0 +1,87 @@
+<wxs module="filters" src="../../../utils/toFix.wxs"></wxs>
+<view class='bg'>
+  <view class='server-steps'>
+    <i-steps class='steps'>
+      <i-step status="finish" icon="barrage">
+        <view slot="title">
+          雇佣
+        </view>
+
+      </i-step>
+      <i-step status="process" icon="brush">
+        <view slot="title">
+          服务中
+        </view>
+      </i-step>
+
+      <i-step icon="accessory">
+        <view slot="title">
+          反馈
+        </view>
+      </i-step>
+
+      <i-step icon="right">
+        <view slot="title">
+          已完成
+        </view>
+      </i-step>
+    </i-steps>
+  </view>
+  
+  <view class="server-oder-msg">
+    <text class='server-oder-txt'>订单信息</text>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单编号:</text>
+      <text class='server-oder-state'>{{server.objectId}}</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单状态:</text>
+      <text class='server-oder-state'>服务中</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单金额:</text>
+      <text class='server-oder-state'>{{server.price}}元</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>雇佣师傅:</text>
+      <text class='server-oder-state'>{{server.EnuserOder.identification.familyName}}</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单时间:</text>
+      <text class='server-oder-state'>{{server.data}}</text>
+    </view>
+  </view>
+
+  <view class='en-msg'>
+    <image src='{{server.EnuserOder.avatarUrl}}' class='en-icon' />
+    <view class='en-msg-detail'>
+      <text class='en-name'>{{server.EnuserOder.identification.id_name}}</text>
+      <view class='en-detail-txt'>
+        <text>服务次数：</text>
+        <text>{{server.EnuserOder.identification.industry}}</text>
+        <text class='lin'>|</text>
+        <text>好评率：</text>
+        <text>{{filters.toFix(server.EnuserOder.identification.appraise/(server.EnuserOder.identification.industry*5)*100)}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='server-oder-detail'>
+    <text class='oder-detail'>需求详情</text>
+    <view class='server-oder-detail-tx'>
+      <text class='detail'>详细描述：</text>
+      <text class='option'>{{server.Special}}</text>
+    </view>
+    <view class='server-oder-detail-option'>
+      <text class='detail'>维修问题：</text>
+      <text class='option'>{{server.MSselect}}</text>
+    </view>
+    <view class='server-oder-detail-option'>
+      <text class='detail'>问题图片：</text>
+      <block wx:for="{{server.picurls}}" wx:key="*this">
+      <image class='questioni-img' src='{{item}}'></image>
+      </block>
+      
+    </view>
+  </view>
+</view>

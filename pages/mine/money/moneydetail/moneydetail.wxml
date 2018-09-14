@@ -1,0 +1,22 @@
+<i-notice-bar icon="systemprompt" loop>
+        在提现成功后我们将会在48小时内打款到您的微信零钱，敬请谅解！！！
+    </i-notice-bar>
+<view class="tixian-box">
+    <form bindsubmit="formSubmit">
+        <view class=" account">
+            <text>到账账户</text>
+            <view class='msg'>{{msg.nickName}}</view>
+        </view>
+        <view class="money-box">
+            <view>提现金额</view>
+            <view class=" money-ipt-box">
+                <text>￥</text>
+                <input bindinput="changeMoney" name="money" type="digit" value="{{drawMoney}}">{{money}}</input>
+            </view>
+            <view>钱包余额￥{{money}}
+            </view>
+            <view class="ft-notice" style="color:#666">最低提现额度<text style="color: #5bb9e9">100</text>元</view>
+            <button class="withdrawals" formType="submit" style="background: #5bb9e9">提现</button>
+        </view> 
+    </form>
+</view>

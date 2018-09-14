@@ -1,0 +1,42 @@
+.img-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-logo image{
+  height: 200rpx;
+  width: 250rpx;
+}
+.font-s{
+  margin: 20rpx;
+  font-size: 28rpx;
+  letter-spacing: 2rpx;
+  text-indent:50rpx;
+  line-height: 50rpx;
+  color: #636363;
+}
+.phone{
+  display: flex;
+  height: 90rpx;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  background-color: #5bb9e9;
+  border-radius: 50rpx;
+}
+.phone-msg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-tx{
+  padding-left: 20rpx;
+}
+.font-ss{
+  font-size: 20rpx;
+  padding-top: 20rpx;
+  width: 315rpx;
+  color: #636363;
+  justify-content: center;
+}

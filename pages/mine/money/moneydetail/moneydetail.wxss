@@ -1,0 +1,46 @@
+page {
+    background: #efeff4;
+    font-size: 34rpx;
+}
+
+.tixian-box {
+    margin: 30rpx;
+    background: white;
+}
+.account {
+  display: flex;
+    padding: 60rpx 50rpx;
+    background: #fbfbfb;
+}
+.msg{
+  margin-left: 20rpx;
+}
+.account input {
+    margin-left: 30rpx;
+}
+
+.money-box {
+    padding: 50rpx;
+}
+
+.money-ipt-box {
+  display: flex;
+    border-bottom: 2rpx solid #eee;
+    margin: 30rpx 0 40rpx;
+    font-size: 50rpx;
+    align-items: center;
+}
+
+.money-ipt-box input {
+    height: 1.6em;
+    line-height: 1.6em;
+}
+
+.withdrawals {
+    color: white;
+    margin: 30rpx auto;
+}
+
+.withdrawals::after {
+    content: normal;
+}

@@ -1,0 +1,61 @@
+.balance-box {
+    color: rgba(255,255,255,.8);
+    padding: 40rpx 40rpx 20rpx;
+}
+
+.balance-box .balance-money {
+    font-size: 130rpx;
+    font-family: Kartika;
+    line-height: 1.5em;
+    color: white;
+}
+
+.operation {
+    margin: 0;
+    box-shadow: 0 -10rpx 10rpx rgba(0,0,0,.1);
+    padding-bottom: 10rpx;
+}
+
+.operation::before {
+    content: none;
+}
+
+.operation::after {
+    border-bottom: 10rpx solid #f4f4f4;
+}
+
+.weui-media-box {
+    padding: 20rpx 45rpx;
+}
+
+.weui-media-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.weui-media-box__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.operation .ft-notice {
+    color: #999999;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+
+.operation .weui-media-box__hd_in-appmsg {
+    width: auto;
+    height: auto;
+    line-height: normal;
+}
+
+.operation .iconfont {
+    font-size: 50rpx;
+}

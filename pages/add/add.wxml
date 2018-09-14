@@ -1,0 +1,45 @@
+<view class='tis_bg'>
+  <text class='tis_font'>拍照、留言更多细节：{{select}}</text>
+</view>
+<view class='pic_bg'>
+  <text>上传问题图片</text>
+</view>
+
+<view class='pic_up'>
+  <view class="center">
+    <image wx:for="{{urls}}" bindtap="preview" style="width:70px;height:70px" class="thumbnail" src="{{item}}" wx:key="key"></image>
+    <view class='add_pic' style="width:70px;height:70px" bindtap="add"></view>
+  </view>
+</view>
+
+<view class='message'>
+  <textarea placeholder="请描述你的特殊情况或者特殊要求，以便师傅快速准确为你报价" maxlength="1000" value="" name="content" bindinput='Special' />
+</view>
+ <view wx:if="{{message.Engineer==0}}">
+  <view class='address_bg'>
+  <view class='address_bg_view'>
+    <image src='{{message.avatarUrl}}' class='address_img'></image>
+    <text class='address_text'>{{message.nickName}}</text>
+    <text class='address_text'>{{message.phone}}</text>
+    <text class='address_text'>{{message.city}}</text>
+    <image src='../image/edit.png' class='address_img_edit' bindtap='edit'></image>
+  </view>
+  <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;"></view>
+  <view class='address_message'>
+    <text class='address_message_text'>{{message.address}}{{message.detailed}}</text>
+  </view>
+  <view wx:if="{{message.hePhonel>0}}">
+    <view style="height:1px;border:none;border-top:1px dashed #B3B3B3;"></view>
+    <view class='address_message'>
+      <text class='address_message_text'>他/她的电话：{{message.hePhonel}}</text>
+    </view>
+  </view>
+  <view wx:else></view>
+</view>
+<form bindsubmit="release" report-submit='true'>
+  <button formType="submit" style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 10rpx; border-radius: 40rpx;background: #5bb9e9" data-userOder='{{oderid}}'>提交</button>
+</form>
+  </view>
+<view wx:else></view>
+
+<!-- <button formType="submit" style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 100rpx; border-radius: 40rpx;background: #5bb9e9" data-userOder='{{oderid}}'>提交</button> -->

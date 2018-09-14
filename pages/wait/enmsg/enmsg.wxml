@@ -1,0 +1,46 @@
+<wxs module="filters" src="../../../utils/toFix.wxs"></wxs>
+<view class='enmsg-bg'>
+  <view class='enmsg-msg'>
+    <image src='{{enmsg.identification.avatarUrl}}' class='enmsg-msg-img'></image>
+    <text class='enmsg-mgs-tx'>{{enmsg.familyName}}</text>
+    <view class='enmsg-detail'>
+      <text class='enmsg-detail-tongyong'>服务{{enmsg.industry}}次</text>
+      <text class='enmsg-detail-line'>|</text>
+      <text class='enmsg-detail-tongyong'>完成{{enmsg.finish}}次</text>
+      <text class='enmsg-detail-line'>|</text>
+      <text class='enmsg-detail-tongyong'>未完成{{enmsg.undone}}次</text>
+      <text class='enmsg-detail-line'>|</text>
+      <text class='enmsg-detail-tongyong'>好评率{{filters.toFix(enmsg.appraise/(enmsg.industry*5)*100)}}%</text>
+    </view>
+  </view>
+</view>
+<!--{{enmsg.skilledness}}-->
+<view class="weui-form-preview">
+  <view class="weui-form-preview">
+    <view class="weui-form-preview__hd">
+      <view class='address' >
+    <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:25rpx;color:black;'>服务类型</text>
+    </view>
+  </view>
+    </view>
+    <view class='address' >
+    <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:25rpx;color:#8a8a8a;margin: 20rpx;'>主营类目</text>
+      <text class='weui-form-preview__value' style='font-size:25rpx;margin: 20rpx;'>{{enmsg.skilledness}}</text>
+    </view>
+  </view>
+  </view>
+</view>
+ <view class='address' >
+    <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:25rpx;color:#8a8a8a;margin: 20rpx;'>师傅地址</text>
+      <text class='weui-form-preview__value' style='font-size:25rpx;margin: 20rpx;'>{{enmsg.identification.address}}</text>
+    </view>
+  </view>
+   <view class='address' >
+    <view class='weui-form-preview__item'>
+        <text class='weui-form-preview__label' style='font-size:25rpx;color:#8a8a8a;margin: 20rpx;'>距离您</text>
+      <text class='weui-form-preview__value' style='font-size:25rpx;margin: 20rpx;'>{{distance}}/KM</text>
+    </view>
+  </view>

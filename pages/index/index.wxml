@@ -1,0 +1,136 @@
+<view wx:if="{{network==1}}">
+无网络
+</view>
+<view wx:else>
+<view class="top_img" >
+    <swiper  autoplay="true" duration="{{duration}}" interval="{{interval}}" style='height:400rpx'  circular='true'>
+      <block wx:for="{{img_urls}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item}}" style="width: 100%; height: 100%"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='swbg'>
+    <view class='addressbg' bindtap='clickAddress'>
+    <image src='http://bmob-cdn-17927.b0.upaiyun.com/2018/05/28/4325f2ea40e0e29b80ccee12d70a967b.jpg'class='adimg'></image>
+    <text style='color:#fff;font-size:27rpx;' >{{address}}</text>
+    </view>
+    </view>
+  </view>
+ 
+  <view class='viewbg'>
+<view class='new' bindtap='weixiu'>
+    <image src='resources/weixiu.png' style="height: 70rpx; width: 70rpx;display: inline-block ;margin-left: 30px;"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>维修检修</text>
+    <text class='detailT' >灯具、管道等12类</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='anzhuang'>
+    <image src='resources/anzhuan.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>安装组装</text>
+    <text class='detailT'>家电、水电等11类</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='qingjie'>
+    <image src='resources/qingjie.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px;"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>清洁保养</text>
+    <text class='detailT' >家电、虫害等10类</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='banyun'>
+    <image src='resources/banyun.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>搬装运卸</text>
+    <text class='detailT' >搬家、拉货等5类</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='zhuangxiu'>
+    <image src='resources/zhuangxiu.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>房屋装修</text>
+    <text class='detailT' >门窗、墙纸等7类</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='kaisuo'>
+    <image src='resources/kaisuo.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>开锁换锁</text>
+    <text class='detailT' >开锁、换锁等12类</text>
+    </view>
+    </view>
+</view>
+
+
+<view class='new' bindtap='zhineng'>
+    <image src='resources/zhineng.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>智能家居</text>
+    <text class='detailT' >指纹锁、智能晾衣架等 </text>
+    </view>
+    </view>
+</view>
+
+
+<view class='new' bindtap='modi'>
+    <image src='resources/modi.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>摩的</text>
+    <text class='detailT' >搭乘快人一步</text>
+    </view>
+    </view>
+</view>
+
+
+<view class='new' bindtap='parking'>
+    <image src='resources/parking.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>共享车位</text>
+    <text class='detailT' >外出停车不担忧</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='nanny'>
+    <image src='resources/nanny.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>保姆月嫂</text>
+    <text class='detailT' >安全、高效</text>
+    </view>
+    </view>
+</view>
+
+<view class='new' bindtap='gengduo'>
+    <image src='resources/gengduo.png' style="height: 70rpx; width: 70rpx;display: inline-block;margin-left: 30px"></image>
+    <view style='display:inline-block;margin-left: 20px'>
+    <view class='detail'>
+    <text style='color:#636363;font-size:35rpx;'>更多</text>
+    <text class='detailT' >修剪栽种等</text>
+    </view>
+    </view>
+</view>
+</view>
+
+</view>

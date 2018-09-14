@@ -1,0 +1,16 @@
+ <view class='bg_select' style="width:100%;height:35px">
+    <text>请选择具体要维修的家具类型（单选）</text>
+  </view>
+  <block wx:for="{{one.title2}}" wx:key="key">
+    <view class="model-list" bindtap="selectClick" id="{{index}}" data-select='{{item.title2}}'>
+      <view class="middle-title">
+          <text>{{item.title}}</text>
+      </view>
+      <view wx:if="{{item.selectImage==true}}" class='img'>
+        <image src="../../image/select.png" class="seletedImage" />
+      </view>
+    </view>
+  </block>
+<view class='btn' bindtap='goNewsTap'>
+  <text>下一步</text>
+</view>

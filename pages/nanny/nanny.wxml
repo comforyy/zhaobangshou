@@ -1,0 +1,134 @@
+<view>
+  <image src='http://bmob-cdn-9619.b0.upaiyun.com/2018/09/11/cfbff53940787e4b800bb81d6efc045d.jpg' class='nanny'></image>
+
+ <view class="weui-cells__title">请填写信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">位置</view>
+      </view>
+      <view class="weui-cell__bd" bindtap='btnlocal'>
+        <input class="weui-input" placeholder="点击确定您的位置"  value='{{localaddress}}' disabled='true'/>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">主要需求</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入您的需求" bindinput='management'/>
+      </view>
+      <view class="weui-cell__ft">
+      </view>
+    </view>
+
+<view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系电话</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入电话"  type="digit" bindinput="phone" maxlength='11' />
+      </view>
+      <view class="weui-cell__ft">
+        
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">住家类型</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexhome}}" bindchange="nannyhome" range='{{nannyhome}}'>
+          <view class="weui-input">{{nannyhome[indexhome]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">服务时长</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexserver}}" bindchange="nannyservertime" range='{{nannyservertime}}'>
+          <view class="weui-input">{{nannyservertime[indexserver]}}</view>
+        </picker>
+      </view>
+    </view>
+
+     <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">需求时段</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexnannydata}}" bindchange="nannydata" range='{{nannydata}}'>
+          <view class="weui-input">{{nannydata[indexnannydata]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">房屋面积</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexarea}}" bindchange="nannyarea" range='{{nannyarea}}'>
+          <view class="weui-input">{{nannyarea[indexarea]}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">请选择小孩</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexkids}}" bindchange="nannykids" range='{{nannykids}}'>
+          <view class="weui-input">{{nannykids[indexkids]}}</view>
+        </picker>
+      </view>
+    </view>
+    
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">工资预期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker  value="{{indexwage}}" bindchange="nannywage" range='{{nannywage}}'>
+          <view class="weui-input">{{nannywage[indexwage]}}</view>
+        </picker>
+      </view>
+    </view>
+<!--
+<view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">截止日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="data" value="{{date}}" start="2018-09-01" end="2050-09-01" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+      </view>
+    </view>
+-->
+    
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="选填" bindinput='selectmsg'/>
+      </view>
+      <view class="weui-cell__ft">
+        
+      </view>
+    </view>
+
+  </view>
+
+  <form bindsubmit="release" report-submit='true'>
+    <button formType="submit" style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 20rpx; border-radius: 40rpx;background: #5bb9e9" >发布</button>
+  </form>
+
+  </view>

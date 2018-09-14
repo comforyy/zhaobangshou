@@ -1,0 +1,61 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <!-- one-start -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class='money-income'>
+            <block wx:for="{{income}}" wx:key="key">
+              <view class='money-income-list'>
+                <text class='money-income-list-select'>{{item.MSselect}}</text>
+                <text class='money-income-list-addresss'>{{item.enuserid.nickName}}</text>
+                <text class='money-income-list-price'>+{{item.price}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!-- one-end -->
+        <!--two-star-->
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        <view class='money-income'>
+            <block wx:for="{{withdrawal}}" wx:key="key">
+              <view class='money-income-list'>
+                <text class='money-income-list-select'>{{item.createdAt}}</text>
+                <text class='money-income-list-addresss'>{{item.enuser.nickName}}</text>
+                <text class='money-withdrawal-list-price'>{{item.money}}</text>
+                <block wx:if="{{item.State_oder==0}}">
+                <text class='money-withdrawal-list-addresss'>正在处理</text>
+                </block>
+                <block wx:else>
+                <text class='money-withdrawal-b-list-addresss'>已打款</text>
+                </block>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!---two-end->
+        <!-- three-stare -->
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+         <view class='money-income'>
+            <block wx:for="{{aftersales}}" wx:key="key">
+              <view class='money-income-list'>
+                <text class='money-income-list-select'>{{item.MSselect}}</text>
+                <text class='money-income-list-addresss'>{{item.enuserid.nickName}}</text>
+                <text class='money-income-list-price'>-{{item.price}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <!-- three-end -->
+      </view>
+    </view>
+  </view>
+</view>

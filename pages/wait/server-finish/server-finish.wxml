@@ -1,0 +1,90 @@
+<wxs module="filters" src="../../../utils/toFix.wxs"></wxs>
+<view class='bg'>
+  <view class='server-steps'>
+    <i-steps class='steps'>
+      <i-step status="finish" icon="barrage">
+        <view slot="title">
+          雇佣
+        </view>
+
+      </i-step>
+      <i-step status="finish" icon="brush">
+        <view slot="title">
+          服务中
+        </view>
+      </i-step>
+
+      <i-step status="finish" icon="accessory">
+        <view slot="title">
+          反馈
+        </view>
+      </i-step>
+
+      <i-step status="process" icon="right">
+        <view slot="title">
+          已完成
+        </view>
+      </i-step>
+
+    </i-steps>
+  </view>
+  <view class="server-oder-msg">
+    <text class='server-oder-txt'>订单信息</text>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单编号:</text>
+      <text class='server-oder-state'>{{finish.objectId}}</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单状态:</text>
+      <text class='server-oder-state'>确认完成</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单金额:</text>
+      <text class='server-oder-state'>{{finish.price}}</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>雇佣师傅:</text>
+      <text class='server-oder-state'>{{finish.enuserid.identification.familyName}}</text>
+    </view>
+    <view class='server-oder-state'>
+      <text class='server-oder-state-txt'>订单时间:</text>
+      <text class='server-oder-state'>{{finish.data}}</text>
+    </view>
+  </view>
+
+  <view class='en-msg'>
+    <image src='{{finish.enuserid.avatarUrl}}' class='en-icon' />
+    <view class='en-msg-detail'>
+      <text class='en-name'>{{finish.enuserid.identification.id_name}}</text>
+      <view class='en-detail-txt'>
+        <text>服务次数：</text>
+        <text>{{finish.enuserid.identification.industry}}</text>
+        <text class='lin'>|</text>
+        <text>好评率：</text>
+        <text>{{filters.toFix(finish.enuserid.identification.appraise/(finish.enuserid.identification.industry*5)*100)}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='server-oder-detail'>
+    <text class='oder-detail'>需求详情</text>
+    <view class='server-oder-detail-tx'>
+      <text class='detail'>详细描述：</text>
+      <text class='option'>{{finish.Special}}</text>
+    </view>
+    <view class='server-oder-detail-option'>
+      <text class='detail'>维修问题：</text>
+      <text class='option'>{{finish.MSselect}}</text>
+    </view>
+    <view class='server-oder-detail-option'>
+      <text class='detail'>评价订单：</text>
+      <text class='option'>{{finish.feedbackPro}}</text>
+    </view>
+    <view class='server-oder-detail-option'>
+      <text class='detail'>评价图片：</text>
+      <block wx:for="{{finish.picurls}}" wx:key="*this">
+        <image class='questioni-img' src='{{item}}'></image>
+      </block>
+    </view>
+  </view>
+</view>

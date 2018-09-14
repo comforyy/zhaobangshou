@@ -1,0 +1,29 @@
+
+<view class="container">
+    <view class="balance-box" style="background-color:#5bb9e9">
+        <view>余额（元）</view>
+        <view class="balance-money">{{money}}</view>
+    </view>
+    <view class="weui-panel weui-panel_access operation">
+        <view class="weui-panel__bd">
+            <view class="weui-media-box weui-media-box_appmsg" bindtap='gowithdrawal'>
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <text class="icon iconfont icon-tixian" style="color:#5bb9e9"></text>
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title ft-content">提现 <text class="ft-notice">仅支持微信钱包</text>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-media-box weui-media-box_appmsg" bindtap='income'>
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <text class="icon iconfont icon-mingxi" style="color:#5bb9e9"></text>
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title">明细
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

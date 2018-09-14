@@ -1,0 +1,102 @@
+.bg_select{
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 80rpx;
+  font-size: 26rpx;
+  padding-left: 20px;
+}
+.form{
+ font-size: 30rpx;
+ padding-left: 20px;
+}
+.input-group {
+    position: relative;
+    padding:24rpx 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 28%;
+}
+.textarea {
+    display: inline-block;
+    width: 28%;
+}
+.input-group input{
+    display: inline-block;
+    border: none;
+    width: 65%;
+    height: auto;
+    min-height: auto;
+    overflow: inherit;
+    padding-left: 5px;
+}
+
+
+.radio-group{
+  position: relative;
+    padding:24rpx 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+.radio-label{
+ display: inline-block;
+    width: 28%;
+}
+.radio{
+ display: inline-block;
+  width: 28%;
+  
+}
+.local{
+  height: 37rpx;
+  display: inline-block;
+  width: 37rpx;
+}
+.local_address{
+  display: inline-block;
+  width: 10%;
+ 
+}
+
+/**
+三级联动
+*/
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.city-font{
+ 
+}

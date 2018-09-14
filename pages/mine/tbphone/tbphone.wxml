@@ -1,0 +1,9 @@
+<view class='bg_select' style="width:100%;height:50rpx">
+    <text>当前绑定手机号码为：{{userphone}}</text>
+  </view>
+<view class="inputView" style="margin-top: 30% ">
+<input class="input" type="number" placeholder="请输入账号"bindinput="listenerPhoneInput"  maxlength="11"/>
+</view>
+
+<button style=" margin-left: 15rpx; margin-right: 15rpx; margin-top: 100rpx; border-radius: 40rpx;background: #5bb9e9" type="primary"  
+ bindtap="sure_mod">确定修改</button>
